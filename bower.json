@@ -1,0 +1,22 @@
+{
+  "name": "dashbored",
+  "description": "Dashbored is an all-in-one dashboard for users to keep notes, track the weather, get news updates, etc. Built with Express, Angular, Node, and SQLite.",
+  "main": "server.js",
+  "authors": [
+    "“Emma <“emma.beaton@gmail.com”>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/beatface/dashbored",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18"
+  }
+}

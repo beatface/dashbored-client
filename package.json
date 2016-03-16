@@ -1,0 +1,45 @@
+{
+  "name": "dashbored-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatface/dashbored-client.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "res": true,
+      "next": true,
+      "app": true
+    },
+    "rules": {
+      "no-console": 0,
+      "comma-dangle": 0,
+      "no-console": 1,
+      "no-unused-vars": 1,
+      "no-undef": 1,
+      "no-extra-semi": 1,
+      "no-empty": 1
+    }
+  },
+  "author": "“Emma <“emma.beaton@gmail.com”>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beatface/dashbored-client/issues"
+  },
+  "homepage": "https://github.com/beatface/dashbored-client#readme",
+  "dependencies": {
+    "electron-prebuilt": "^0.37.2"
+  }
+}

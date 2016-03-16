@@ -1,0 +1,9 @@
+{
+    "esversion": 6,
+    "strict": true,
+    "esnext": false,
+    "node": true,
+    "predef": [
+        "app"
+    ]
+}
