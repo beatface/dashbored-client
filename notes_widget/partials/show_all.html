@@ -1,7 +1,7 @@
 <div>
     <p>All notes</p>
     <div ng-repeat="note in allNotes">
-        <a href="/dashbored/notes/{{note.NoteId}}"><p id={{note.NoteId}}>Title: {{note.Title}}<br>Note: {{note.Content}}</p></a>
+        <a href="#/notes/{{note.NoteId}}"><p id={{note.NoteId}}>Title: {{note.Title}}<br>Note: {{note.Content}}</p></a>
     </div>
     <button ui-sref="add">Add a note</button>
 </div>
