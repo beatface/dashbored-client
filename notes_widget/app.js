@@ -18,6 +18,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/notes/:id",
             templateUrl: "./notes_widget/partials/show_one.html",
             controller: "ShowOneCtrl"
+        })
+        .state('edit', {
+            url: "/notes/:id/edit",
+            templateUrl: "./notes_widget/partials/edit.html",
+            controller: "EditNoteCtrl"
         });
     $urlRouterProvider.otherwise("/");
 });

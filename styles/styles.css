@@ -1,0 +1,6 @@
+#notes-widget {
+    border: 1px solid grey;
+    height: 400px;
+    width: 400px;
+    overflow: scroll;
+}

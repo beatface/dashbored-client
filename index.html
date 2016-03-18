@@ -6,7 +6,7 @@
         <!-- script(src="/components/jquery/dist/jquery.min.js") -->
     </head>
     <body>
-        <div ng-app="NotesWidget">
+        <div id="notes-widget" ng-app="NotesWidget">
             <h2>Notes</h2>
             <div ui-view></div>
         </div>
@@ -16,9 +16,12 @@
         <script src='lib/angular-ui-router/release/angular-ui-router.min.js'></script>
         <!-- apps -->
         <script src='notes_widget/app.js'></script>
+        <!-- Factories -->
+        <script src='notes_widget/factories/note_factory.js'></script>
         <!-- Controllers -->
         <script src='notes_widget/controllers/show_all_ctrl.js'></script>
         <script src='notes_widget/controllers/show_one_ctrl.js'></script>
         <script src='notes_widget/controllers/add_ctrl.js'></script>
+        <script src='notes_widget/controllers/edit_ctrl.js'></script>
     </body>
 </html>

@@ -1,0 +1,16 @@
+<div ng-controller="EditNoteCtrl">
+    <div class="input-group">
+        <label for='title'> Title </label>
+        <input id="title" type='text' name='title' value='{{noteTitle}}'>
+        <br>
+    </div>
+    <div class="input-group">
+        <label for='content'> Note </label>
+        <input id="content" type='text' name='content' value='{{noteContent}}'>
+        <br>
+    </div>
+    <div class="input-group">
+        <button class="btn" ng-click='updateNote(title, content)'>Save</button>
+    </div>
+    <button ui-sref="index">View all</button>
+</div>

@@ -10,5 +10,4 @@ app.controller('ShowNotesCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.allNotes = data.data;
     });
 
-
 }]);
