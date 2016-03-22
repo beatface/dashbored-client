@@ -10,7 +10,7 @@ app.controller('EditNoteCtrl', ['$scope', '$http', '$state', 'NoteFactory', func
     $scope.noteContent = thisNote.content;
 
     $scope.updateNote = (title, note) => {
-        $http.post(`http://127.0.0.1:3153/notes/${thisNote.id}`, { "title": thisNote.title, "content": thisNote.content })
+        $http.post(`http://127.0.0.1:3153/notes/${thisNote.id}`, { "title": title, "content": note })
         .then(function(success) {
             console.log(`The note got posted!`, success.data);
         },

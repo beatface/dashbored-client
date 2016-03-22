@@ -2,6 +2,7 @@
     <p>All notes</p>
     <div ng-repeat="note in allNotes">
         <a href="#/notes/{{note.NoteId}}"><p id={{note.NoteId}}>Title: {{note.Title}}<br>Note: {{note.Content}}</p></a>
+        <button ng-click="deleteNote(note.NoteId)">Delete</button>
     </div>
     <button ui-sref="add">Add a note</button>
 </div>
