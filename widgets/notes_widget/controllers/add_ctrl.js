@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('AddNotesCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+NotesApp.controller('AddNotesCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
     console.log("add a note controller!!");
 
     $scope.saveNote = (title, note) => {

@@ -3,6 +3,9 @@
     <head>
         <title>Dashbored</title>
         <link rel='stylesheet' href='styles/styles.css'>
+        <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
         <!-- script(src="/components/jquery/dist/jquery.min.js") -->
     </head>
     <body>
@@ -11,17 +14,24 @@
             <div ui-view></div>
         </div>
 
+        <div id="twitter-widget" ng-app="TwitterWidget">
+            <div ui-view></div>
+        </div>
+
          <!-- script require('electron-connect').client.create() -->
         <script src='lib/angular/angular.min.js'></script>
         <script src='lib/angular-ui-router/release/angular-ui-router.min.js'></script>
         <!-- apps -->
-        <script src='notes_widget/app.js'></script>
+        <script src='widgets/notes_widget/app.js'></script>
+        <script src='widgets/twitter_widget/app.js'></script>
         <!-- Factories -->
-        <script src='notes_widget/factories/note_factory.js'></script>
+        <script src='widgets/state_factory.js'></script>
+        <script src='widgets/notes_widget/factories/note_factory.js'></script>
         <!-- Controllers -->
-        <script src='notes_widget/controllers/show_all_ctrl.js'></script>
-        <script src='notes_widget/controllers/show_one_ctrl.js'></script>
-        <script src='notes_widget/controllers/add_ctrl.js'></script>
-        <script src='notes_widget/controllers/edit_ctrl.js'></script>
+        <script src='widgets/notes_widget/controllers/show_all_ctrl.js'></script>
+        <script src='widgets/notes_widget/controllers/show_one_ctrl.js'></script>
+        <script src='widgets/notes_widget/controllers/add_ctrl.js'></script>
+        <script src='widgets/notes_widget/controllers/edit_ctrl.js'></script>
+        <script src='widgets/twitter_widget/controllers/default_ctrl.js'></script>
     </body>
 </html>

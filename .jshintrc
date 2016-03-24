@@ -4,6 +4,8 @@
     "esnext": false,
     "node": true,
     "predef": [
-        "app"
+        "app",
+        "NotesApp",
+        "TwitterApp"
     ]
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-app.factory('NoteFactory', function() {
+NotesApp.factory('NoteFactory', function() {
     console.log('note factory');
 
     var note = {};

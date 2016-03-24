@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('EditNoteCtrl', ['$scope', '$http', '$state', 'NoteFactory', function($scope, $http, $state, NoteFactory) {
+NotesApp.controller('EditNoteCtrl', ['$scope', '$http', '$state', 'NoteFactory', function($scope, $http, $state, NoteFactory) {
     console.log("add a note controller!!");
 
     let thisNote = NoteFactory.getNote();

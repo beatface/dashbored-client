@@ -1,8 +1,8 @@
 "use strict";
 /* eslint-disable */
-const app = angular.module("NotesWidget", ["ui.router"]);
+const NotesApp = angular.module("NotesWidget", ["ui.router"]);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+NotesApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
             url: "/",
