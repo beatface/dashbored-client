@@ -4,12 +4,10 @@ const TwitterApp = angular.module("TwitterWidget", ["ui.router"]);
 
 
 TwitterApp.config(function($stateProvider, $urlRouterProvider) {
-    console.log('got here');
     $stateProvider
-        .state('index', {
+        .state('twIndex', {
             url: "/",
-            templateUrl: "./twitter_widget/partials/default.html",
+            templateUrl: "./widgets/twitter_widget/partials/default.html",
             controller: "DefaultCtrl"
         });
-    $urlRouterProvider.otherwise("/");
 });

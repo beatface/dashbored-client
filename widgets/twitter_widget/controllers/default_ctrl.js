@@ -1,17 +1,20 @@
 "use strict";
 
-TwitterApp.controller('DefaultCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    console.log("default twitter controller!!");
+TwitterApp.controller('DefaultCtrl', ['$scope', '$http', '$state', 'StateFactory', function($scope, $http, $state, StateFactory) {
 
-    $http.get("http://127.0.0.1:3153/twitter")
-    .then(function(success) {
-        console.log("Yas! Tweet success!", success.data);
-        $scope.tweets = success.data.statuses;
-    },
-    function(err) {
-        console.log('Error loading tweets. :(');
-    });
-
+    console.log(StateFactory.getState());
+    if (StateFactory.getState() === 0) {
+        $http.get("http://127.0.0.1:3153/twitter")
+        .then(function(success) {
+            console.log("Yas! Tweet success!", success.data);
+            $scope.tweets = success.data.statuses;
+            StateFactory.setState();
+            console.log(StateFactory.getState());
+        },
+        function(err) {
+            console.log('Error loading tweets. :(');
+        });
+    }
 
 }]);
 
