@@ -3,6 +3,7 @@
 const NotesApp = angular.module("NotesWidget", ["ui.router"]);
 
 NotesApp.config(function($stateProvider, $urlRouterProvider) {
+    var state = 0;
     $stateProvider
         .state('index', {
             url: "/",
@@ -24,4 +25,11 @@ NotesApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "./widgets/notes_widget/partials/edit.html",
             controller: "EditNoteCtrl"
         });
+
+    $urlRouterProvider.rule(function ($injector, $location) {
+        if (state === 0) {
+            $location.path('/');
+            state = 1;
+        }
+    });
 });
