@@ -15,7 +15,7 @@ function createWindow () {
         height: 900,
         minWidth: 900,
         minHeight: 600,
-        // transparent: true,
+        transparent: true,
         title: "Dashbored"
     });
 

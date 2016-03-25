@@ -2,6 +2,7 @@
 
 SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window) {
 
+    $('#snake-widget').draggable();
     var canvas = document.getElementById('board');
     var ctx = canvas.getContext('2d');
     var score = 0;
