@@ -2,7 +2,6 @@
 
 SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window) {
 
-    $('#snake-widget').draggable();
     var canvas = document.getElementById('board');
     var ctx = canvas.getContext('2d');
     var score = 0;
@@ -11,17 +10,19 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
     var snake = new Array(3);
     var active = true;
     var speed = 500;
-
-    // Initialize the matrix.
-    var map = new Array(20);
-    for (var i = 0; i < map.length; i++) {
-        map[i] = new Array(20);
-    }
-
-    canvas.width = 204;
-    canvas.height = 224;
+    var map;
 
     $scope.startGame = () => {
+        active = true;
+        // Initialize the matrix.
+        map = new Array(20);
+        for (var i = 0; i < map.length; i++) {
+            map[i] = new Array(20);
+        }
+
+        canvas.width = 204;
+        canvas.height = 224;
+
         // Add the snake
         map = generateSnake(map);
 
