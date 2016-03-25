@@ -10,7 +10,14 @@ let mainWindow;
 
 function createWindow () {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 950, height: 700, transparent: true});
+    mainWindow = new BrowserWindow({
+        width: 1050,
+        height: 900,
+        minWidth: 900,
+        minHeight: 600,
+        transparent: true,
+        title: "Dashbored"
+    });
 
     // and load the index.html of the app.
     mainWindow.loadURL('file://' + __dirname + '/index.html');
