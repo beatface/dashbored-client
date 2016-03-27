@@ -1,30 +1,38 @@
 #notes-widget,
 #snake-widget {
-    border: 1px solid grey;
-    height: 300px;
-    width: 300px;
-    overflow: scroll;
-}
+  border: 1px solid grey;
+  height: 300px;
+  width: 300px;
+  overflow: scroll; }
 
 #notes-widget,
 #snake-widget,
 #twitter-widget {
-    display: inline-block;
-}
+  display: inline-block; }
 
+#clock-widget {
+  position: absolute;
+  top: 0;
+  left: 0; }
 
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
+#notes-widget {
+  position: relative;
+  left: 400px;
+  z-index: 101; }
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%; }
 
 body {
   font-family: 'Quicksand';
   color: #7f8c8d;
   font-size: 14px;
-  background-color: #ededed; }
-
+  background: rgba(0, 0, 0, 0.85);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
 
 .bubble {
   width: 100%;
@@ -34,17 +42,15 @@ body {
   background-color: #ecf0f1;
   position: relative;
   -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
   border-radius: 8px;
   text-align: left;
   display: inline-block; }
-  .bubble:hover > .over-bubble {
-    opacity: 1; }
+
+.bubble:hover > .over-bubble {
+  opacity: 1; }
 
 .bubble-container {
-  width: 75%;
+  width: 80%;
   display: block;
   position: relative;
   padding-left: 20px;
@@ -64,7 +70,7 @@ body {
   border-right: 20px solid #ecf0f1; }
 
 .timeline {
-  width: 560px;
+  width: 530px;
   height: 400px;
   overflow: scroll;
   display: block;
@@ -76,10 +82,8 @@ body {
   -webkit-box-shadow: #bdc3c7 0 5px 5px;
   -moz-box-shadow: #bdc3c7 0 5px 5px;
   box-shadow: #bdc3c7 0 5px 5px;
-  -moz-border-radius-bottomleft: 8px;
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  -moz-border-radius-bottomright: 8px;
   -webkit-border-bottom-right-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 2em; }
@@ -89,7 +93,7 @@ body {
     background-color: #d3d7d8; }
 
 .avatar {
-  width: 18%;
+  width: 12%;
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -99,14 +103,13 @@ body {
     width: 100%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     border-radius: 50%;
     border: 5px solid #ecf0f1;
     position: relative; }
-  .avatar:hover > .hover {
-    cursor: pointer;
-    opacity: 1; }
+
+.avatar:hover > .hover {
+  cursor: pointer;
+  opacity: 1; }
 
 .hover {
   position: absolute;
@@ -118,8 +121,6 @@ body {
   border: 5px solid #5cc0ff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   border-radius: 50%;
   text-align: center;
   color: white;
@@ -128,20 +129,14 @@ body {
   font-family: 'FontAwesome';
   font-weight: 300;
   -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
   transition-timing-function: ease; }
 
 .first {
-  width: 560px;
+  width: 530px;
   display: block;
   margin: auto;
   background-color: #3498db;
@@ -152,10 +147,8 @@ body {
   margin-top: 1em;
   font-family: "Lato";
   font-size: 1.6em;
-  -moz-border-radius-topleft: 8px;
   -webkit-border-top-left-radius: 8px;
   border-top-left-radius: 8px;
-  -moz-border-radius-topright: 8px;
   -webkit-border-top-right-radius: 8px;
   border-top-right-radius: 8px;
   position: relative; }
@@ -167,106 +160,6 @@ body {
   position: absolute;
   right: 5%; }
 
-.over-bubble {
-  line-height: 1.4em;
-  padding-top: 10%;
-  background-color: rgba(236, 240, 241, 0.8);
-  position: relative;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  text-align: center;
-  display: inline-block;
-  position: absolute !important;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-  font-size: 2.8em;
-  text-shadow: white 1px 1px 0; }
-
-.action {
-  margin-right: .3em;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in; }
-
-.icon-star {
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease; }
-  .icon-star:hover {
-    cursor: pointer;
-    color: #f39c12; }
-
-.icon-retweet {
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease; }
-  .icon-retweet:hover {
-    cursor: pointer;
-    color: #16a085; }
-
-.icon-mail-reply {
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease; }
-  .icon-mail-reply:hover {
-    cursor: pointer;
-    color: #3498db; }
-
 h3 {
   font-size: 1.2em;
   font-weight: bold;
@@ -275,23 +168,167 @@ h3 {
   margin-bottom: .2em;
   color: #95a5a6; }
 
-.retweet {
-  position: absolute;
+.demo-container.clocks {
+  background: #3cd19e;
+  padding: 0;
+  width: 250px;
+  height: 300px;
+  margin: 0;
+  overflow: hidden; }
+
+.clock {
+  border-radius: 50%;
+  background: radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff), #fff;
+  display: inline-block;
+  margin: 1% 1% 1% 13%;
+  padding-bottom: 65%;
+  position: relative;
+  top: 50%;
+  width: 65%;
+  transform: translateY(-40%);
+  z-index: 10; }
+
+.clock.show {
   opacity: 1;
+  transform: translateY(-50%);
+  transition: all 2.5s 0.5s cubic-bezier(0.12, 1.03, 0.34, 1); }
+
+.clock::after {
+  background: red;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4%;
+  height: 4%;
+  z-index: 10; }
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
   top: 0;
-  right: 1em;
-  display: block;
-  background-color: #16a085;
-  padding: 4px;
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
-  .retweet .icon-retweet {
-    color: white;
-    margin: auto;
-    width: 100%;
-    display: block;
-    font-size: 1.2em; }
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.hours-container {
+  animation: rotate 43200s infinite linear; }
+
+.linear.minutes-container {
+  animation: rotate 3600s infinite linear; }
+
+.linear.seconds-container {
+  animation: rotate 60s infinite linear; }
+
+.steps {
+  animation: rotate 60s infinite steps(60); }
+  .steps .minutes-container {
+    animation: rotate 3600s infinite steps(60); }
+
+.local.steps.minutes-container {
+  animation: none; }
+
+.bounce.minutes-container {
+  transition: transform 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44); }
+
+.bounce.seconds-container {
+  transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44); }
+
+.hours {
+  background: #000;
+  width: 3.5%;
+  height: 40%;
+  position: absolute;
+  left: 48.25%;
+  top: 22%;
+  transform-origin: 50% 71%; }
+
+.minutes {
+  background: #000;
+  width: 3.5%;
+  height: 55%;
+  position: absolute;
+  left: 48.25%;
+  top: 7%;
+  transform-origin: 50% 78.5%; }
+
+.seconds {
+  background: red;
+  width: 1.5%;
+  height: 42%;
+  position: absolute;
+  left: 49.25%;
+  top: 20%;
+  transform-origin: 50% 71%;
+  z-index: 8; }
+
+.label {
+  background: #fff;
+  border-radius: 0.25em;
+  color: #000;
+  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5em 0.75em 0.25em;
+  position: absolute;
+  top: -4em;
+  left: 50%;
+  transform: translate(-50%, 0); }
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg); } }
+
+.clock.station {
+  background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 95%;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2) inset; }
+
+.clock.station .seconds::before {
+  background: red;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: -9%;
+  left: -200%;
+  height: 18%;
+  width: 500%; }
+
+.clock.simple {
+  background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 88%; }
+
+.clock.simple:after {
+  background-color: #000;
+  width: 5%;
+  height: 5%; }
+
+.clock.simple .seconds {
+  background-color: #000;
+  height: 45%;
+  left: 49.5%;
+  top: 14%;
+  width: 1%;
+  transform-origin: 50% 80%; }
+
+.clock.simple .minutes {
+  width: 2%;
+  height: 40%;
+  left: 49%;
+  top: 10%;
+  transform-origin: 50% 100%; }
+
+.clock.simple .hours {
+  width: 2.5%;
+  height: 20%;
+  left: 48.75%;
+  top: 30%;
+  transform-origin: 50% 100%; }
+
+.hours.angled {
+  transform: rotateZ(-40deg); }
+
+.minutes.angled {
+  transform: rotateZ(40deg); }

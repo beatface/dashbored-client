@@ -8,8 +8,13 @@
         <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
     </head>
     <body>
+
         <div id="notes-widget" ng-app="NotesWidget">
             <h2>Notes</h2>
+            <div ui-view></div>
+        </div>
+
+        <div id="clock-widget">
             <div ui-view></div>
         </div>
 
@@ -28,12 +33,13 @@
         <script>window.$ = window.jQuery = require("./lib/jquery/dist/jquery.js");</script>
         <script src="lib/jquery-ui/jquery-ui.js"></script>
         <script>
-            $('#snake-widget').draggable();
-            $('#notes-widget').draggable();
-            $('#twitter-widget').draggable();
+            $('#snake-widget').draggable({ containment: "parent" });
+            $('#notes-widget').draggable({ containment: "parent" });
+            $('#twitter-widget').draggable({ containment: "parent" });
         </script>
         <!-- apps -->
         <script src='widgets/notes_widget/app.js'></script>
+        <script src='widgets/clock_widget/app.js'></script>
         <script src='widgets/twitter_widget/app.js'></script>
         <script src='widgets/snake_widget/app.js'></script>
         <!-- Factories -->
@@ -41,11 +47,16 @@
         <script src='widgets/notes_widget/factories/state_factory.js'></script>
         <script src='widgets/twitter_widget/factories/state_factory.js'></script>
         <!-- Controllers -->
+        <!-- Notes -->
         <script src='widgets/notes_widget/controllers/show_all_ctrl.js'></script>
         <script src='widgets/notes_widget/controllers/show_one_ctrl.js'></script>
         <script src='widgets/notes_widget/controllers/add_ctrl.js'></script>
         <script src='widgets/notes_widget/controllers/edit_ctrl.js'></script>
+        <!-- Clock -->
+        <script src='widgets/clock_widget/controllers/clock_ctrl.js'></script>
+        <!-- Twitter -->
         <script src='widgets/twitter_widget/controllers/default_ctrl.js'></script>
+        <!-- Snake -->
         <script src='widgets/snake_widget/controllers/game_ctrl.js'></script>
     </body>
 </html>
