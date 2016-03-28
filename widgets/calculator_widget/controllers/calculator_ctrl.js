@@ -13,16 +13,13 @@ CalculatorApp.controller('CalculatorCtrl', ['$scope', function($scope) {
     };
 
     $scope.updateOutput = (selection) => {
-        console.log(selection);
         equation += selection;
         $scope.output = equation;
-        console.log(equation);
     };
 
     $scope.updateOperator = (operator) => {
         equation += ` ${operators[operator]} `;
         $scope.output = equation;
-        console.log(equation);
     };
 
     $scope.calculate = () => {
