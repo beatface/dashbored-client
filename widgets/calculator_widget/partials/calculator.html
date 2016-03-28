@@ -1,0 +1,25 @@
+<div id="calculator">
+    <div class="top">
+		<span class="clear" ng-click='clear()'>C</span>
+		<div class="output">{{output}}</div>
+	</div>
+	<div class="keys">
+		<!-- operators and other keys -->
+        <span ng-click='updateOutput(7)'>7</span>
+        <span ng-click='updateOutput(8)'>8</span>
+        <span ng-click='updateOutput(9)'>9</span>
+		<span class="operator" ng-click='updateOperator("add")'>+</span>
+        <span ng-click='updateOutput(4)'>4</span>
+        <span ng-click='updateOutput(5)'>5</span>
+        <span ng-click='updateOutput(6)'>6</span>
+		<span class="operator" ng-click='updateOperator("subtract")'>-</span>
+        <span ng-click='updateOutput(1)'>1</span>
+        <span ng-click='updateOutput(2)'>2</span>
+        <span ng-click='updateOutput(3)'>3</span>
+		<span class="operator" ng-click='updateOperator("divide")'>÷</span>
+        <span ng-click='updateOutput(0)'>0</span>
+		<span ng-click='updateOutput(".")'>.</span>
+		<span class="equals" ng-click='calculate()'>=</span>
+		<span class="operator" ng-click='updateOperator("multiply")'>x</span>
+	</div>
+</div>
