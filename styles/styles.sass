@@ -2,17 +2,18 @@
 // ---- COLOR PALETTE
 $bkgd-color: rgba(1, 22, 39, 0.85)
 $cal-nums-hover: #ffc952
-
-
+$clock-seconds: #ff7c87
 
 
 
 #snake-widget
-    border: 1px solid grey
     background-color: #EFFFE9
     height: 300px
     width: 300px
     overflow: scroll
+    border-radius: 5px
+    box-shadow: 0 0 20px #333
+    background: rgba(255, 255, 255, 0.95)
 
 #notes-widget,
 #snake-widget,
@@ -49,106 +50,106 @@ body
 //
 
 #calculator
-  width: 286px
-  height: auto
-  margin: 30px auto
-  padding: 20px 20px 9px
-  background: #9dd2ea
-  background: linear-gradient(#9dd2ea, #5E9EBB)
-  border-radius: 3px
-  box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2)
+    width: 286px
+    height: auto
+    margin: 30px auto
+    padding: 20px 20px 9px
+    background: #9dd2ea
+    background: linear-gradient(#9dd2ea, #5E9EBB)
+    border-radius: 3px
+    box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2)
 
 
 /* Top portion */
 
 .top span.clear
-  float: left
+    float: left
 
 .top .output
-  height: 40px
-  width: 212px
-  float: right
-  background: rgba(0, 0, 0, 0.2)
-  border-radius: 3px
-  box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2)
-  font-size: 17px
-  line-height: 40px
-  color: white
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
-  text-align: right
-  letter-spacing: 1px
+    height: 40px
+    width: 212px
+    float: right
+    background: rgba(0, 0, 0, 0.2)
+    border-radius: 3px
+    box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2)
+    font-size: 17px
+    line-height: 40px
+    color: white
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
+    text-align: right
+    letter-spacing: 1px
 
 
 /* Clear floats */
 
 .keys,
 .top
-  overflow: hidden
+    overflow: hidden
 
 .keys span,
 .top span.clear
-  float: left
-  position: relative
-  top: 0
-  cursor: pointer
-  width: 66px
-  height: 36px
-  background: white
-  border-radius: 3px
-  box-shadow: 0px 4px rgba(0, 0, 0, 0.2)
-  margin: 0 7px 11px 0
-  color: #888
-  line-height: 36px
-  text-align: center
-  user-select: none
-  transition: all 0.2s ease
+    float: left
+    position: relative
+    top: 0
+    cursor: pointer
+    width: 66px
+    height: 36px
+    background: white
+    border-radius: 3px
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2)
+    margin: 0 7px 11px 0
+    color: #888
+    line-height: 36px
+    text-align: center
+    user-select: none
+    transition: all 0.2s ease
 
 .keys span.operator
-  background: #FFF0F5
-  margin-right: 0
+    background: #EBF796
+    margin-right: 0
 
 .keys span.eval
-  background: #f1ff92
-  box-shadow: 0px 4px #9da853
-  color: #888e5f
+    background: #f1ff92
+    box-shadow: 0px 4px #9da853
+    color: #888e5f
 
 .top span.clear
-  background: #ff9fa8
-  box-shadow: 0px 4px #ff7c87
-  color: white
+    background: #ff9fa8
+    box-shadow: 0px 4px #ff7c87
+    color: white
 
 
 /* Some hover effects */
 
 .keys span:hover
-  background: $cal-nums-hover
-  box-shadow: 0px 4px #d59b1b
-  color: white
+    background: $cal-nums-hover
+    box-shadow: 0px 4px #d59b1b
+    color: white
 
 .keys span.eval:hover
-  background: #abb850
-  box-shadow: 0px 4px #717a33
-  color: #ffffff
+    background: #abb850
+    box-shadow: 0px 4px #717a33
+    color: #ffffff
 
 .top span.clear:hover
-  background: #f68991
-  box-shadow: 0px 4px #d3545d
-  color: white
+    background: #f68991
+    box-shadow: 0px 4px #d3545d
+    color: white
 
 
 /* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
 
 .keys span:active
-  box-shadow: 0px 0px #6b54d3
-  top: 4px
+    box-shadow: 0px 0px #6b54d3
+    top: 4px
 
 .keys span.eval:active
-  box-shadow: 0px 0px #717a33
-  top: 4px
+    box-shadow: 0px 0px #717a33
+    top: 4px
 
 .top span.clear:active
-  top: 4px
-  box-shadow: 0px 0px #d3545d
+    top: 4px
+    box-shadow: 0px 0px #d3545d
 
 
 
@@ -183,7 +184,7 @@ body
     width: 80%
     display: block
     position: relative
-    padding-left: 20px
+    padding-left: 25px
     vertical-align: top
     display: inline-block
 
@@ -209,9 +210,6 @@ body
     padding-bottom: 2em
     padding-left: 0
     list-style-type: none
-    -webkit-box-shadow: #bdc3c7 0 5px 5px
-    -moz-box-shadow: #bdc3c7 0 5px 5px
-    box-shadow: #bdc3c7 0 5px 5px
     -webkit-border-bottom-left-radius: 8px
     border-bottom-left-radius: 8px
     -webkit-border-bottom-right-radius: 8px
@@ -227,7 +225,6 @@ body
     display: inline-block
     vertical-align: top
     position: relative
-    overflow: hidden
     margin-left: 2%
     img
         width: 100%
@@ -269,7 +266,8 @@ body
     width: 500px
     display: block
     margin: auto
-    background-color: #3498db
+    // background: linear-gradient(#9dd2ea, #5E9EBB)
+    background: rgba(94, 158, 187, 0.9)
     text-shadow: #2084c7 1px 1px 0
     padding: 1em 0 !important
     color: white
@@ -309,12 +307,13 @@ h3
     background: rgba(46, 196, 182, 0)
     padding: 0
     width: 250px
-    height: 300px
-    margin: 0
+    height: 220px
+    margin: 0 0 2px 0
     overflow: hidden
 
 .clock
     border-radius: 50%
+    border: 2px solid $clock-seconds
     background: radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff), #fff
     display: inline-block
     margin: 1% 1% 1% 13%
@@ -326,7 +325,7 @@ h3
     z-index: 10
 
 .clock::after
-    background: red
+    background: $clock-seconds
     border-radius: 50%
     content: ""
     position: absolute
@@ -389,7 +388,7 @@ h3
     transform-origin: 50% 78.5%
 
 .seconds
-    background: rgba(232, 90, 113, 1)
+    background: $clock-seconds
     width: 1.5%
     height: 42%
     position: absolute
@@ -409,7 +408,7 @@ h3
     box-shadow: 0 0 0.5em rgba(0,0,0,0.2) inset
 
 .clock.station .seconds::before
-    background: red
+    background: $clock-seconds
     border-radius: 50%
     content: ""
     position: absolute
@@ -440,6 +439,7 @@ h3
         display: inline-block
     a:hover
         background-color: rgba(46, 196, 182, 0.9)
+        transition: all 0.2s ease
     .italic
         color: #999
         font-style: italic
@@ -522,8 +522,9 @@ h3
         width: 100%
     .content
         margin-top: 40px
+        height: 170px
     .add-note-btn
-        margin-left: 90px
+        margin-left: 115px
     button
         cursor: pointer
         border: none
@@ -531,6 +532,7 @@ h3
         font-family: 'Open Sans', sans-serif
         color: #fff
         outline: 0
+        transition: all 0.2s ease
     button:hover
         background: rgba(232, 90, 113, 0.9)
     button span
