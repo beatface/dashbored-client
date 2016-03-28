@@ -1,6 +1,25 @@
-<div>
-    <p>Note</p>
-    <p>Title: {{note.Title}}<br>Note: {{note.Content}}</p>
-    <button ui-sref="index">See all</button>
-    <button><a href='#/notes/{{id}}/edit'>Edit</a></button>
+
+<div class='app'>
+    <div class='top'>
+         <div class='buttons'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+        <div class='title'>
+            {{note.Title}}
+        </div>
+        <div class='info'>
+
+        </div>
+        <button ui-sref="index">See all</button>
+        <button><a href='#/notes/{{id}}/edit'>Edit</a></button>
+        <div class='clear'></div>
+    </div>
+    <div class='main'>
+        <p class='words'>110 words</p>
+        <div class='content'>
+            <p>{{note.Content}}</p>
+        </div>
+    </div>
 </div>

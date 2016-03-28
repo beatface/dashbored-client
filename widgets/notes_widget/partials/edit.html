@@ -1,16 +1,25 @@
-<div>
-    <div class="input-group">
-        <label for='title'> Title </label>
-        <input id="title" type='text' name='title' ng-model='noteTitle'>
-        <br>
-    </div>
-    <div class="input-group">
-        <label for='content'> Note </label>
-        <input id="content" type='text' name='content' ng-model='noteContent'>
-        <br>
-    </div>
-    <div class="input-group">
+
+<div class='app'>
+    <div class='top'>
+         <div class='buttons'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+        <div class='title'>
+            <input id="title" type='text' name='title' ng-model='noteTitle'>
+        </div>
+        <div class='info'>
+            Edit mode
+        </div>
         <button class="btn" ng-click='updateNote(noteTitle, noteContent)'>Save</button>
+        <button ui-sref="index">View all</button>
+        <div class='clear'></div>
     </div>
-    <button ui-sref="index">View all</button>
+    <div class='main'>
+        <p class='words'>--</p>
+        <div class='content'>
+            <input id="content" type='text' name='content' ng-model='noteContent'>
+        </div>
+    </div>
 </div>
