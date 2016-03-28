@@ -26,6 +26,10 @@
             <div ui-view></div>
         </div>
 
+        <div id="calculator-widget">
+            <div ui-view></div>
+        </div>
+
 
         <script src='lib/angular/angular.js'></script>
         <script src='lib/angular-ui-router/release/angular-ui-router.min.js'></script>
@@ -36,12 +40,14 @@
             $('#snake-widget').draggable({ containment: "parent" });
             $('#notes-widget').draggable({ containment: "parent" });
             $('#twitter-widget').draggable({ containment: "parent" });
+            $('#calculator-widget').draggable({ containment: "parent" });
         </script>
         <!-- apps -->
         <script src='widgets/notes_widget/app.js'></script>
         <script src='widgets/clock_widget/app.js'></script>
         <script src='widgets/twitter_widget/app.js'></script>
         <script src='widgets/snake_widget/app.js'></script>
+        <script src='widgets/calculator_widget/app.js'></script>
         <!-- Factories -->
         <script src='widgets/notes_widget/factories/note_factory.js'></script>
         <script src='widgets/notes_widget/factories/state_factory.js'></script>
@@ -58,5 +64,8 @@
         <script src='widgets/twitter_widget/controllers/default_ctrl.js'></script>
         <!-- Snake -->
         <script src='widgets/snake_widget/controllers/game_ctrl.js'></script>
+        <!-- Calculator -->
+        <script src='widgets/calculator_widget/controllers/calculator_ctrl.js'></script>
+
     </body>
 </html>
