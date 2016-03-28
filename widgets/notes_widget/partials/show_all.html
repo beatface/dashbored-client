@@ -1,8 +1,27 @@
-<div>
-    <p>All notes</p>
-    <div ng-repeat="note in allNotes">
-        <a href="#/notes/{{note.NoteId}}"><p id={{note.NoteId}}>Title: {{note.Title}}<br>Note: {{note.Content}}</p></a>
-        <button ng-click="deleteNote(note.NoteId)">Delete</button>
+
+<div class='app'>
+    <div class='top'>
+         <div class='buttons'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+        <div class='title'>
+            Notes
+        </div>
+        <div class='info'>
+
+        </div>
+        <button ui-sref="add" class="add-note-btn">Add a note</button>
+        <div class='clear'></div>
     </div>
-    <button ui-sref="add">Add a note</button>
+    <div class='main'>
+        <p class='words'>6 notes</p>
+        <div class='content'>
+            <div ng-repeat="note in allNotes">
+                <a href="#/notes/{{note.NoteId}}"><p id={{note.NoteId}}>{{note.Title}}</p></a>
+                <button ng-click="deleteNote(note.NoteId)">Delete</button>
+            </div>
+        </div>
+    </div>
 </div>

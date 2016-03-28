@@ -1,16 +1,25 @@
-<div>
-    <div class="input-group">
-        <label for='title'> Title </label>
-        <input id="title" type='text' name='title' ng-model='title'>
-        <br>
-    </div>
-    <div class="input-group">
-        <label for='content'> Note </label>
-        <input id="content" type='text' name='content' ng-model='content'>
-        <br>
-    </div>
-    <div class="input-group">
+<div class='app'>
+    <div class='top'>
+         <div class='buttons'>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+        </div>
+        <div class='title'>
+            <input id="title" type='text' name='title' ng-model='title'>
+        </div>
+        <div class='info'>
+            Saved
+        </div>
         <button class="btn" ng-click='saveNote(title, content)'>Save</button>
+        <button ui-sref="index">View all</button>
+        <div class='clear'></div>
     </div>
-    <button ui-sref="index">View all</button>
+    <div class='main'>
+        <p class='words'>220 words</p>
+        <div class='content'>
+            <h1>Title</h1>
+            <input id="content" type='text' name='content' ng-model='content'>
+        </div>
+    </div>
 </div>

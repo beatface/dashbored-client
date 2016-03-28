@@ -1,4 +1,3 @@
-#notes-widget,
 #snake-widget {
   border: 1px solid grey;
   background-color: #EFFFE9;
@@ -35,8 +34,17 @@ body {
   box-sizing: border-box;
   -webkit-box-sizing: border-box; }
 
+#twitter-widget h3 {
+  margin-top: 0; }
+
+#twitter-widget input {
+  border-radius: 3px;
+  border: none;
+  padding: 6px 6px 6px 8px;
+  font-size: 16px; }
+
 .bubble {
-  width: 100%;
+  width: 85%;
   padding: .5em 1em;
   line-height: 1.4em;
   padding: 20px;
@@ -71,7 +79,7 @@ body {
   border-right: 20px solid #ecf0f1; }
 
 .timeline {
-  width: 530px;
+  width: 500px;
   height: 400px;
   overflow: scroll;
   display: block;
@@ -137,7 +145,7 @@ body {
   transition-timing-function: ease; }
 
 .first {
-  width: 530px;
+  width: 500px;
   display: block;
   margin: auto;
   background-color: #3498db;
@@ -153,6 +161,9 @@ body {
   -webkit-border-top-right-radius: 8px;
   border-top-right-radius: 8px;
   position: relative; }
+  .first p {
+    display: inline-block;
+    margin: 0; }
 
 .icon-twitter {
   font-size: 1.5em; }
@@ -188,11 +199,6 @@ h3 {
   width: 65%;
   transform: translateY(-40%);
   z-index: 10; }
-
-.clock.show {
-  opacity: 1;
-  transform: translateY(-50%);
-  transition: all 2.5s 0.5s cubic-bezier(0.12, 1.03, 0.34, 1); }
 
 .clock::after {
   background: red;
@@ -255,7 +261,7 @@ h3 {
   transform-origin: 50% 78.5%; }
 
 .seconds {
-  background: #E71D36;
+  background: #e85a71;
   width: 1.5%;
   height: 42%;
   position: absolute;
@@ -263,20 +269,6 @@ h3 {
   top: 20%;
   transform-origin: 50% 71%;
   z-index: 8; }
-
-.label {
-  background: #fff;
-  border-radius: 0.25em;
-  color: #000;
-  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.5em 0.75em 0.25em;
-  position: absolute;
-  top: -4em;
-  left: 50%;
-  transform: translate(-50%, 0); }
 
 @keyframes rotate {
   100% {
@@ -297,39 +289,114 @@ h3 {
   height: 18%;
   width: 500%; }
 
-.clock.simple {
-  background: #fff url(/assets/images/posts/clocks/ios_clock.svg) no-repeat center;
-  background-size: 88%; }
-
-.clock.simple:after {
-  background-color: #000;
-  width: 5%;
-  height: 5%; }
-
-.clock.simple .seconds {
-  background-color: #000;
-  height: 45%;
-  left: 49.5%;
-  top: 14%;
-  width: 1%;
-  transform-origin: 50% 80%; }
-
-.clock.simple .minutes {
-  width: 2%;
-  height: 40%;
-  left: 49%;
-  top: 10%;
-  transform-origin: 50% 100%; }
-
-.clock.simple .hours {
-  width: 2.5%;
-  height: 20%;
-  left: 48.75%;
-  top: 30%;
-  transform-origin: 50% 100%; }
-
 .hours.angled {
   transform: rotateZ(-40deg); }
 
 .minutes.angled {
   transform: rotateZ(40deg); }
+
+#notes-widget {
+  margin: 0;
+  font-family: 'Source Code Pro'; }
+  #notes-widget p {
+    color: #444;
+    display: inline-block; }
+  #notes-widget a:hover {
+    background-color: rgba(46, 196, 182, 0.9); }
+  #notes-widget .italic {
+    color: #999;
+    font-style: italic; }
+  #notes-widget h1 {
+    color: #454647;
+    font-size: 24px; }
+  #notes-widget .topbar {
+    padding-left: 25px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    height: 30px;
+    font-size: 20px;
+    line-height: 1.5; }
+  #notes-widget .app {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+    width: 550px;
+    box-shadow: 0 0 20px #333; }
+  #notes-widget .larger {
+    width: 1000px; }
+  #notes-widget .top {
+    cursor: move;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 10px 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  #notes-widget .buttons {
+    position: relative;
+    float: left;
+    width: 33%;
+    z-index: 1; }
+  #notes-widget .circle {
+    float: left;
+    margin: 4px 16px 0 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer; }
+  #notes-widget .circle:nth-child(1) {
+    background: #FF5E51; }
+  #notes-widget .circle:nth-child(1):hover {
+    background: #ea1100; }
+  #notes-widget .circle:nth-child(2) {
+    background: #FEBB00; }
+  #notes-widget .circle:nth-child(2):hover {
+    background: #987000; }
+  #notes-widget .circle:nth-child(3) {
+    background: #18CF37; }
+  #notes-widget .circle:nth-child(3):hover {
+    background: #0d741f; }
+  #notes-widget .clear {
+    clear: left; }
+  #notes-widget .title {
+    z-index: 0;
+    color: #888;
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin-left: -10px; }
+  #notes-widget .info {
+    color: #BFBFCF;
+    width: 33%;
+    float: right;
+    text-align: right; }
+  #notes-widget .words {
+    color: #ccc;
+    margin-top: 0;
+    float: right; }
+  #notes-widget .main {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px 50px 40px;
+    background: #f9f8f7;
+    width: 100%; }
+  #notes-widget .content {
+    margin-top: 40px; }
+  #notes-widget .add-note-btn {
+    margin-left: 90px; }
+  #notes-widget button {
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    outline: 0; }
+  #notes-widget button:hover {
+    background: rgba(232, 90, 113, 0.9); }
+  #notes-widget button span {
+    color: #FFF;
+    font-size: 14px;
+    text-shadow: 0 0 8px #333; }

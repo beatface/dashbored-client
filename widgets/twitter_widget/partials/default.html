@@ -1,7 +1,9 @@
 <div id="twitter-container">
     <span class="first">
-    Twits
-    <span class="icon-edit new"></span>
+        <p ng-hide="search">Twits</p>
+        <input ng-show="search" name="search" ng-model="twitSearch">
+        <button ng-show="search" ng-click="searchTweets(twitSearch)">Search</button>
+        <span class="icon-edit new" ng-click="search=!search"></span>
     </span>
     <ul class="timeline">
 		<li ng-repeat="tweet in tweets">
