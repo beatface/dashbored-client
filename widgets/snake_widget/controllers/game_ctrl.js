@@ -12,15 +12,24 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
     var speed = 500;
     var map;
 
+    (function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.font = '16px Quicksand';
+        ctx.fillText('Snake!', ((canvas.width / 2) - (ctx.measureText('Snake!').width / 2)), 50);
+        ctx.font = '12px Quicksand';
+        ctx.fillText("Click 'Start game'", ((canvas.width / 2) - (ctx.measureText("Click 'Start game'").width / 2)), 70);
+    })()
+
     $scope.startGame = () => {
         active = true;
         // Initialize the matrix.
-        map = new Array(20);
+        map = new Array(26);
         for (var i = 0; i < map.length; i++) {
-            map[i] = new Array(20);
+            map[i] = new Array(26);
         }
-        canvas.width = 204;
-        canvas.height = 224;
+        canvas.width = 264;
+        canvas.height = 284;
         map = generateSnake(map);
         map = generateFood(map);
         drawGame();
@@ -62,21 +71,21 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
                 }
                 // checking if snake hits wall, then game is over
                 if (snake[0].x < 0 ||
-                    snake[0].x >= 20 ||
+                    snake[0].x >= 26 ||
                     snake[0].y < 0 ||
-                    snake[0].y >= 20) {
+                    snake[0].y >= 26) {
                     showGameOver();
                     return;
                 }
                 // checking if snake hits food, if so, make new food and add to snake body length
                 if (map[snake[0].x][snake[0].y] === 1) {
-                    score += 10;
+                    score += 1;
                     map = generateFood(map);
                     // add to snake body
                     snake.push({ x: snake[snake.length - 1].x, y: snake[snake.length - 1].y });
                     map[snake[snake.length - 1].x][snake[snake.length - 1].y] = 2;
                     // level up if score is a multiple of 100
-                    if ((score % 100) === 0) {
+                    if ((score % 10) === 0) {
                         level += 1;
                     }
                 // check if snake hit itself
@@ -105,7 +114,7 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
                     ctx.fillStyle = 'black';
                     ctx.fillRect(x * 10, y * 10 + 20, 10, 10);
                 } else if (map[x][y] === 2) {
-                    ctx.fillStyle = 'orange';
+                    ctx.fillStyle = 'rgba(46, 196, 182, 0.9)';
                     ctx.fillRect(x * 10, y * 10 + 20, 10, 10);
                 }
             }
@@ -122,18 +131,28 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
         ctx.strokeRect(2, 20, canvas.width - 5, canvas.height - 24);
 
         ctx.fillStyle = 'black';
-        ctx.font = '12px sans-serif';
+        ctx.font = '12px Quicksand';
         ctx.fillText('Score: ' + score + ' - Level: ' + level, 2, 12);
+
+        ctx.save();
+        ctx.font = 'bold 102px Quicksand';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        var centreX = canvas.width / 2;
+        var centreY = canvas.height / 2;
+        ctx.fillText(score.toString(), centreX, centreY);
+        ctx.restore();
     } // end drawMain()
 
     function generateFood(map) {
         // Generate a random position for the rows and the columns.
-        var rndX = Math.round(Math.random() * 19),
-            rndY = Math.round(Math.random() * 19);
+        var rndX = Math.round(Math.random() * 25),
+            rndY = Math.round(Math.random() * 25);
         // make sure food is not placed on or under snake body
         while (map[rndX][rndY] === 2) {
-            rndX = Math.round(Math.random() * 19);
-            rndY = Math.round(Math.random() * 19);
+            rndX = Math.round(Math.random() * 25);
+            rndY = Math.round(Math.random() * 25);
         }
         map[rndX][rndY] = 1;
         return map;
@@ -141,11 +160,11 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
 
     function generateSnake(map) {
         // Generate a random position for the row and the column of the head.
-        var rndX = Math.round(Math.random() * 19),
-            rndY = Math.round(Math.random() * 19);
+        var rndX = Math.round(Math.random() * 25),
+            rndY = Math.round(Math.random() * 25);
         // check that snake does not start off with part of body out of bounds
         while ((rndX - snake.length) < 0) {
-            rndX = Math.round(Math.random() * 19);
+            rndX = Math.round(Math.random() * 25);
         }
 
         for (var i = 0; i < snake.length; i++) {
@@ -160,9 +179,9 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
         active = false;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'black';
-        ctx.font = '16px sans-serif';
+        ctx.font = '16px Quicksand';
         ctx.fillText('Game Over!', ((canvas.width / 2) - (ctx.measureText('Game Over!').width / 2)), 50);
-        ctx.font = '12px sans-serif';
+        ctx.font = '12px Quicksand';
         ctx.fillText('Your Score Was: ' + score, ((canvas.width / 2) - (ctx.measureText('Your Score Was: ' + score).width / 2)), 70);
     } // end showGameOver()
 
