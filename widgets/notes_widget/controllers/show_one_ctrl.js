@@ -1,7 +1,6 @@
 "use strict";
 
 NotesApp.controller('ShowOneCtrl', ['$scope', '$http', '$stateParams', 'NoteFactory', function($scope, $http, $stateParams, NoteFactory) {
-    console.log("notes just one!!");
 
     const id = $stateParams.id;
     $scope.note = "";

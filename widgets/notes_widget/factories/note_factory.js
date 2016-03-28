@@ -1,7 +1,6 @@
 "use strict";
 
 NotesApp.factory('NoteFactory', function() {
-    console.log('note factory');
 
     var note = {};
 
@@ -15,6 +14,5 @@ NotesApp.factory('NoteFactory', function() {
             return note;
         }
     };
-
 
 });

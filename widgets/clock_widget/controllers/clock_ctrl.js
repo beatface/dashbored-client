@@ -69,12 +69,10 @@ ClockApp.controller('ClockCtrl', ["$scope", "$interval", "$timeout", function($s
         }, delay);
       }
     }
-
-    // Do the first minute's rotation, then move every 60 seconds after
+    
     function moveMinuteHand() {
         var mins_container_angle;
         $scope.mins_container_style = 'rotateZ(6deg)';
-        // Then continue with a 60 second interval
         $interval(function() {
             if (mins_container_angle === undefined) {
                 mins_container_angle = 12;
