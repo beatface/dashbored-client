@@ -1,6 +1,6 @@
 <div class='app'>
     <div class='top'>
-         <div class='buttons'>
+        <div class='buttons'>
             <div class='circle'></div>
             <div class='circle'></div>
             <div class='circle'></div>
@@ -9,7 +9,7 @@
             Add
         </div>
         <div class='info'>
-            
+
         </div>
         <button class="btn" ng-click='saveNote(title, content)'>Save</button>
         <button ui-sref="index">View all</button>
@@ -18,8 +18,10 @@
     <div class='main'>
         <p class='words'>220 words</p>
         <div class='content'>
-            <input id="title" type='text' name='title' ng-model='title'>
-            <textarea id="content" type='text' name='content' ng-model='content'>
+            <!-- <input id="title" type='text' name='title' ng-model='title'>
+            <textarea id="content" type='text' name='content' ng-model='content'> -->
+            <h3 id="title" ng-model='title' contenteditable="true" onclick='$(this).focus();'></h3>
+            <p id="content" contenteditable="true" ng-model='content' onclick='$(this).focus();'></p>
         </div>
     </div>
 </div>

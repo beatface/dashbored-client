@@ -2,7 +2,7 @@
   background-color: #EFFFE9;
   height: 325px;
   width: 300px;
-  overflow: scroll;
+  overflow: hidden;
   border-radius: 5px;
   box-shadow: 0 0 20px #333;
   background: rgba(255, 255, 255, 0.95); }
@@ -35,7 +35,8 @@
 #clock-widget {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: -1; }
 
 #notes-widget {
   position: relative;
@@ -210,6 +211,10 @@ body {
   outline: 0;
   border-right-color: #ff9fa8; }
 
+#twitter-widget ::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; }
+
 #twitter-widget h3 {
   margin-top: 0; }
 
@@ -261,8 +266,7 @@ body {
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
   -webkit-border-bottom-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  margin-bottom: 2em; }
+  border-bottom-right-radius: 8px; }
   #twitter-widget .timeline li {
     padding: 1em 0; }
   #twitter-widget .timeline li:nth-child(even) {
@@ -551,7 +555,11 @@ body {
     box-sizing: border-box;
     padding: 20px 50px 40px;
     background: #f9f8f7;
-    width: 100%; }
+    width: 100%;
+    overflow: scroll; }
+  #notes-widget ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; }
   #notes-widget .content {
     margin-top: 40px;
     height: 170px; }
