@@ -7,10 +7,10 @@
             <div class='circle'></div>
         </div>
         <div class='title'>
-            <input id="title" type='text' name='title' ng-model='noteTitle'>
+            Edit
         </div>
         <div class='info'>
-            Edit mode
+
         </div>
         <button class="btn" ng-click='updateNote(noteTitle, noteContent)'>Save</button>
         <button ui-sref="index">View all</button>
@@ -19,7 +19,8 @@
     <div class='main'>
         <p class='words'>--</p>
         <div class='content'>
-            <input id="content" type='text' name='content' ng-model='noteContent'>
+            <h3 id="title" ng-model='noteTitle' contenteditable="true" onclick='$(this).focus();'></h3>
+            <p id="content" contenteditable="true" ng-model='noteContent' onclick='$(this).focus();'></p>
         </div>
     </div>
 </div>
