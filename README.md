@@ -5,7 +5,12 @@ Dashbored is an all-in-one dashboard for users to keep notes, track the weather,
 ### Purpose
 This app was written for my back-end capstone at [Nashville Software School](http://nashvillesoftwareschool.com/).
 
-### Features
+### Technologies
 
+[AngularJS](https://angularjs.org/)
+[Node.js](https://nodejs.org/en/)
+[Express.js](http://expressjs.com/)
+[jQuery](https://jquery.com/)
+[Electron](http://electron.atom.io/)
 
-### Local Use
+### Installation

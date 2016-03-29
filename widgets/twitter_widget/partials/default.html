@@ -1,8 +1,10 @@
 <div id="twitter-container">
     <span class="first">
         <p ng-hide="search">Twits</p>
-        <input ng-show="search" name="search" ng-model="twitSearch">
-        <button ng-show="search" ng-click="searchTweets(twitSearch)">Search</button>
+        <div ng-show="search" class="form-wrapper">
+            <input name="search" ng-model="twitSearch">
+            <button ng-click="searchTweets(twitSearch)">Search</button>
+        </div>
         <span class="icon-edit new" ng-click="search=!search"></span>
     </span>
     <ul class="timeline">

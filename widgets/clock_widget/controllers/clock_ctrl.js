@@ -63,13 +63,12 @@ ClockApp.controller('ClockCtrl', ["$scope", "$interval", "$timeout", function($s
       if (mins_angle > 0) {
         // Set a timeout until the end of the current minute, to move the hand
         var delay = (((360 - mins_angle) / 6) + 0.1) * 1000;
-        console.log(delay);
         $timeout(function() {
             moveMinuteHand();
         }, delay);
       }
     }
-    
+
     function moveMinuteHand() {
         var mins_container_angle;
         $scope.mins_container_style = 'rotateZ(6deg)';
