@@ -11,7 +11,7 @@ let mainWindow;
 function createWindow () {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 1050,
+        width: 1150,
         height: 900,
         minWidth: 900,
         minHeight: 600,
@@ -21,9 +21,6 @@ function createWindow () {
 
     // and load the index.html of the app.
     mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

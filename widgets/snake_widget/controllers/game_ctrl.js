@@ -23,6 +23,11 @@ SnakeApp.controller('SnakeCtrl', ["$scope", "$window", function($scope, $window)
 
     $scope.startGame = () => {
         active = true;
+        score = 0;
+        level = 0;
+        if (snake.length > 3) {
+            snake = snake.slice(0,3)
+        }
         // Initialize the matrix.
         map = new Array(26);
         for (var i = 0; i < map.length; i++) {
